@@ -1,3 +1,3 @@
 audio_play_sound(snd_botao, 1, false);
 
-room_goto(rm_server);
+obj_rede.id_ip = get_string_async("Digite o ip do Host: ", "");
