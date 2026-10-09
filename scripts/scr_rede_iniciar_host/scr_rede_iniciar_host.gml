@@ -12,6 +12,6 @@ function rede_iniciar_host()
 	if(obj_rede.servidor < 0)
 	{
 		obj_rede.sou_host = false;
-		obj_rede.modo_jogo = "solo";
+		obj_rede.modo_jogo = "offline";
 	}
 }

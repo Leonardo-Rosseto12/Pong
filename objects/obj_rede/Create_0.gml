@@ -4,7 +4,7 @@ socket = -1;
 sou_host = false;
 cliente_conectado = false;
 
-modo_jogo = "solo";
+modo_jogo = "offline";
 
 porta = 6510;
 

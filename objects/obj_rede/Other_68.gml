@@ -12,6 +12,17 @@ if (_tipo == 3)
     );
 
     show_debug_message("MENSAGEM RECEBIDA: " + _mensagem);
+	
+	if (string_copy(_mensagem, 1, 12) == "RAQUETE2_Y:")
+	{
+	    var _posicao_y = real(
+	        string_delete(_mensagem, 1, 12)
+	    );
+
+	    show_debug_message(
+	        "POSICAO DA RAQUETE 2: " + string(_posicao_y)
+	    );
+	}
 
 	if (_mensagem == "OLA_HOST")
 	{
