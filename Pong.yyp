@@ -38,6 +38,7 @@
     {"id":{"name":"obj_bola","path":"objects/obj_bola/obj_bola.yy",},},
     {"id":{"name":"obj_botao_cliente","path":"objects/obj_botao_cliente/obj_botao_cliente.yy",},},
     {"id":{"name":"obj_botao_host","path":"objects/obj_botao_host/obj_botao_host.yy",},},
+    {"id":{"name":"obj_espera","path":"objects/obj_espera/obj_espera.yy",},},
     {"id":{"name":"obj_gol","path":"objects/obj_gol/obj_gol.yy",},},
     {"id":{"name":"obj_modo_jogo","path":"objects/obj_modo_jogo/obj_modo_jogo.yy",},},
     {"id":{"name":"obj_play","path":"objects/obj_play/obj_play.yy",},},
@@ -46,9 +47,9 @@
     {"id":{"name":"obj_raquete2","path":"objects/obj_raquete2/obj_raquete2.yy",},},
     {"id":{"name":"obj_rede","path":"objects/obj_rede/obj_rede.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
+    {"id":{"name":"rm_espera","path":"rooms/rm_espera/rm_espera.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_partida","path":"rooms/rm_partida/rm_partida.yy",},},
-    {"id":{"name":"rm_server","path":"rooms/rm_server/rm_server.yy",},},
     {"id":{"name":"scr_iniciando","path":"scripts/scr_iniciando/scr_iniciando.yy",},},
     {"id":{"name":"scr_rede_conectar","path":"scripts/scr_rede_conectar/scr_rede_conectar.yy",},},
     {"id":{"name":"scr_rede_enviar","path":"scripts/scr_rede_enviar/scr_rede_enviar.yy",},},
@@ -74,7 +75,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_partida","path":"rooms/rm_partida/rm_partida.yy",},},
-    {"roomId":{"name":"rm_server","path":"rooms/rm_server/rm_server.yy",},},
+    {"roomId":{"name":"rm_espera","path":"rooms/rm_espera/rm_espera.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -18,6 +18,8 @@ if (_tipo == 3)
 	    var _posicao_y = real(
 	        string_delete(_mensagem, 1, 12)
 	    );
+		
+		
 
 	    show_debug_message(
 	        "POSICAO DA RAQUETE 2: " + string(_posicao_y)
@@ -40,6 +42,8 @@ if (_tipo == 3)
 	if (_mensagem == "OLA_CLIENTE")
 	{
 	    cliente_id = async_load[? "id"];
+
+	    cliente_conectado = true;
 
 	    show_debug_message("CLIENTE CONFIRMOU CONEXAO");
 	    show_debug_message("ID DO CLIENTE: " + string(cliente_id));
