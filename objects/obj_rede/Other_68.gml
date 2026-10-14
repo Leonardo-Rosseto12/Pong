@@ -13,17 +13,19 @@ if (_tipo == 3)
 
     show_debug_message("MENSAGEM RECEBIDA: " + _mensagem);
 	
-	if (string_copy(_mensagem, 1, 12) == "RAQUETE2_Y:")
+	if (string_copy(_mensagem, 1, 11) == "RAQUETE2_Y:")
 	{
-	    var _posicao_y = real(
-	        string_delete(_mensagem, 1, 12)
-	    );
-		
-		
+	    if (obj_rede.modo_jogo == "host")
+	    {
+	        var _posicao_y = real(
+	            string_delete(_mensagem, 1, 11)
+	        );
 
-	    show_debug_message(
-	        "POSICAO DA RAQUETE 2: " + string(_posicao_y)
-	    );
+	        if (instance_exists(obj_raquete2))
+	        {
+	            obj_raquete2.y = _posicao_y;
+	        }
+	    }
 	}
 
 	if (_mensagem == "OLA_HOST")
@@ -47,5 +49,18 @@ if (_tipo == 3)
 
 	    show_debug_message("CLIENTE CONFIRMOU CONEXAO");
 	    show_debug_message("ID DO CLIENTE: " + string(cliente_id));
+
+	    rede_enviar(
+	        cliente_id,
+	        "INICIAR_PARTIDA"
+	    );
+
+	    room_goto(rm_partida);
+	}
+	if (_mensagem == "INICIAR_PARTIDA")
+	{
+	    show_debug_message("INICIANDO PARTIDA NO CLIENTE");
+
+	    room_goto(rm_partida);
 	}
 }

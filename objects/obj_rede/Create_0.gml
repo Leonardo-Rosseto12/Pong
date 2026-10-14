@@ -13,3 +13,4 @@ id_ip = -1;
 host_id = -1;
 cliente_id = -1;
 
+partida_encerrada = false;

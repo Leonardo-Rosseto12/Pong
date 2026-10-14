@@ -1,2 +1,1 @@
-if (obj_rede.modo_jogo == "offline" && global.dois_jogadores) vspeed = 2;
-
+if ((obj_rede.modo_jogo == "offline" && global.dois_jogadores) || obj_rede.modo_jogo == "cliente") vspeed = 2;

@@ -1,14 +1,19 @@
-if (obj_rede.modo_jogo == "offline" && !global.dois_jogadores)
+if (obj_rede.modo_jogo == "offline")
 {
-    vspeed = global.velv_bola;
+    if (!global.dois_jogadores)
+    {
+        vspeed = global.velv_bola;
 
-    if (vspeed >= vel_ia) vspeed = vel_ia;
+        if (vspeed >= vel_ia) vspeed = vel_ia;
 
-    if (vspeed <= -vel_ia) vspeed = -vel_ia;
+        if (vspeed <= -vel_ia) vspeed = -vel_ia;
+    }
 }
+
 else if (obj_rede.modo_jogo == "host") vspeed = 0;
 
-if (obj_rede.modo_jogo == "cliente")
+
+else if (obj_rede.modo_jogo == "cliente")
 {
     rede_enviar(
         obj_rede.host_id,
