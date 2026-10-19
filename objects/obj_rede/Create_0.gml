@@ -14,3 +14,10 @@ host_id = -1;
 cliente_id = -1;
 
 partida_encerrada = false;
+
+timeout_encerramento = false;
+
+aviso_desconexao = false;
+
+pontos_enviados_jogador1 = -1;
+pontos_enviados_jogador2 = -1;

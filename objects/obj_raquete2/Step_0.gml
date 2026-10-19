@@ -13,7 +13,7 @@ if (obj_rede.modo_jogo == "offline")
 else if (obj_rede.modo_jogo == "host") vspeed = 0;
 
 
-else if (obj_rede.modo_jogo == "cliente")
+else if (obj_rede.modo_jogo == "cliente" && !obj_rede.partida_encerrada)
 {
     rede_enviar(
         obj_rede.host_id,

@@ -52,6 +52,7 @@
     {"id":{"name":"rm_partida","path":"rooms/rm_partida/rm_partida.yy",},},
     {"id":{"name":"scr_iniciando","path":"scripts/scr_iniciando/scr_iniciando.yy",},},
     {"id":{"name":"scr_rede_conectar","path":"scripts/scr_rede_conectar/scr_rede_conectar.yy",},},
+    {"id":{"name":"scr_rede_encerrar","path":"scripts/scr_rede_encerrar/scr_rede_encerrar.yy",},},
     {"id":{"name":"scr_rede_enviar","path":"scripts/scr_rede_enviar/scr_rede_enviar.yy",},},
     {"id":{"name":"scr_rede_iniciar_host","path":"scripts/scr_rede_iniciar_host/scr_rede_iniciar_host.yy",},},
     {"id":{"name":"snd_bola","path":"sounds/snd_bola/snd_bola.yy",},},
