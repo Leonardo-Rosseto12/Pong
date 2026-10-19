@@ -27,6 +27,67 @@ if (_tipo == 3)
         _buffer,
         buffer_string
     );
+
+	if (string_copy(_mensagem, 1, 7) == "PONTOS:")
+	{
+	    if (obj_rede.modo_jogo == "cliente")
+	    {
+	        var _dados = string_delete(_mensagem, 1, 7);
+	        var _separador = string_pos(":", _dados);
+
+	        if (_separador > 0)
+	        {
+	            global.ponto_jogador1 = real(
+	                string_copy(_dados, 1, _separador - 1)
+	            );
+
+	            global.ponto_jogador2 = real(
+	                string_delete(_dados, 1, _separador)
+	            );
+	        }
+	    }
+	}
+
+	if (string_copy(_mensagem, 1, 5) == "BOLA:")
+	{
+	    if (obj_rede.modo_jogo == "cliente")
+	    {
+	        var _dados = string_delete(_mensagem, 1, 5);
+	        var _separador = string_pos(":", _dados);
+
+	        if (_separador > 0)
+	        {
+	            var _posicao_x = real(
+	                string_copy(_dados, 1, _separador - 1)
+	            );
+
+	            var _posicao_y = real(
+	                string_delete(_dados, 1, _separador)
+	            );
+
+	            if (instance_exists(obj_bola))
+	            {
+	                obj_bola.x = _posicao_x;
+	                obj_bola.y = _posicao_y;
+	            }
+	        }
+	    }
+	}
+
+	if (string_copy(_mensagem, 1, 10) == "RAQUETE_Y:")
+	{
+	    if (obj_rede.modo_jogo == "cliente")
+	    {
+	        var _posicao_y = real(
+	            string_delete(_mensagem, 1, 10)
+	        );
+
+	        if (instance_exists(obj_raquete))
+	        {
+	            obj_raquete.y = _posicao_y;
+	        }
+	    }
+	}
 	
 	if (string_copy(_mensagem, 1, 11) == "RAQUETE2_Y:")
 	{
