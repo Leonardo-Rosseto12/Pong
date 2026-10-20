@@ -9,3 +9,25 @@ if (obj_rede.modo_jogo == "offline")
 
     room_goto(rm_partida);
 }
+
+else if (obj_rede.modo_jogo == "host" && !obj_rede.revanche_host)
+{
+    obj_rede.revanche_host = true;
+
+    obj_rede.mensagem_revanche = "Aguardando outro jogador...";
+    obj_rede.alarm[2] = obj_rede.duracao_mensagem;
+
+    if (obj_rede.cliente_id >= 0)
+        rede_enviar(obj_rede.cliente_id, "REVANCHE_HOST");
+}
+
+else if (obj_rede.modo_jogo == "cliente" && !obj_rede.revanche_cliente)
+{
+    obj_rede.revanche_cliente = true;
+
+    obj_rede.mensagem_revanche = "Aguardando outro jogador...";
+    obj_rede.alarm[2] = obj_rede.duracao_mensagem;
+
+    if (obj_rede.host_id >= 0)
+        rede_enviar(obj_rede.host_id, "REVANCHE_CLIENTE");
+}

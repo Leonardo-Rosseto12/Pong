@@ -48,6 +48,7 @@
     {"id":{"name":"obj_raquete","path":"objects/obj_raquete/obj_raquete.yy",},},
     {"id":{"name":"obj_raquete2","path":"objects/obj_raquete2/obj_raquete2.yy",},},
     {"id":{"name":"obj_rede","path":"objects/obj_rede/obj_rede.yy",},},
+    {"id":{"name":"obj_vencedor","path":"objects/obj_vencedor/obj_vencedor.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_espera","path":"rooms/rm_espera/rm_espera.yy",},},
     {"id":{"name":"rm_game_over","path":"rooms/rm_game_over/rm_game_over.yy",},},

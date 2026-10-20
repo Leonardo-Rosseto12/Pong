@@ -21,3 +21,10 @@ aviso_desconexao = false;
 
 pontos_enviados_jogador1 = -1;
 pontos_enviados_jogador2 = -1;
+
+revanche_host = false;
+revanche_cliente = false;
+
+mensagem_revanche = "";
+tmp_mensagem_revanche = 0;
+duracao_mensagem = 180;

@@ -24,6 +24,8 @@ if (!obj_rede.partida_encerrada)
         if (global.ponto_jogador1 >= global.pontos_max || global.ponto_jogador2 >= global.pontos_max)
         {
             obj_rede.partida_encerrada = true;
+			obj_rede.revanche_host = false;
+			obj_rede.revanche_cliente = false;
 
             if (obj_rede.modo_jogo == "host" && obj_rede.cliente_id >= 0)
             {
