@@ -2,16 +2,17 @@ var _tipo = async_load[? "type"];
 
 if (_tipo == 2)
 {
-    show_debug_message("CONEXAO ENCERRADA");
-
     if (obj_rede.modo_jogo == "host")
     {
-        show_debug_message("CLIENTE DESCONECTADO");
-
         obj_rede.timeout_encerramento = false;
         obj_rede.alarm[0] = -1;
 
         audio_stop_sound(snd_musica);
+		global.ponto_jogador1 = 0;
+		global.ponto_jogador2 = 0;
+
+		pontos_enviados_jogador1 = -1;
+		pontos_enviados_jogador2 = -1;
         rede_encerrar();
 		
         obj_rede.aviso_desconexao = true;
@@ -103,6 +104,17 @@ if (_tipo == 3)
 	        }
 	    }
 	}
+	
+	if (_mensagem == "REINICIAR_RAQUETES")
+	{
+	    if (obj_rede.modo_jogo == "cliente")
+	    {
+	        if (instance_exists(obj_raquete2))
+	        {
+	            obj_raquete2.y = 116;
+	        }
+	    }
+	}
 
 	if (_mensagem == "OLA_HOST")
 	{
@@ -112,9 +124,6 @@ if (_tipo == 3)
 	        cliente_id,
 	        "OLA_CLIENTE"
 	    );
-
-	    show_debug_message("HOST CONFIRMADO");
-	    show_debug_message("ID DO CLIENTE: " + string(cliente_id));
 	}
 
 	if (_mensagem == "OLA_CLIENTE")
@@ -122,9 +131,6 @@ if (_tipo == 3)
 	    cliente_id = async_load[? "id"];
 
 	    cliente_conectado = true;
-
-	    show_debug_message("CLIENTE CONFIRMOU CONEXAO");
-	    show_debug_message("ID DO CLIENTE: " + string(cliente_id));
 
 	    rede_enviar(
 	        cliente_id,
@@ -135,14 +141,11 @@ if (_tipo == 3)
 	
 	if (_mensagem == "INICIAR_PARTIDA")
 	{
-	    show_debug_message("INICIANDO PARTIDA NO CLIENTE");
-
 	    room_goto(rm_partida);
 	}
 	
 	if (_mensagem == "FIM_PARTIDA" && !partida_encerrada)
 	{
-		show_debug_message("CLIENTE RECEBEU FIM_PARTIDA");
 	    partida_encerrada = true;
 
 	    rede_enviar(
@@ -150,26 +153,19 @@ if (_tipo == 3)
 	        "FIM_CONFIRMADO"
 	    );
 
-	    global.ponto_jogador1 = 0;
-	    global.ponto_jogador2 = 0;
-
 	    audio_stop_sound(snd_musica);
-	    room_goto(rm_menu);
+	    room_goto(rm_game_over);
 	}
 	
 	if (_mensagem == "FIM_CONFIRMADO" && obj_rede.modo_jogo == "host")
 	{
-	    show_debug_message("HOST RECEBEU FIM_CONFIRMADO");
-		
 		 obj_rede.timeout_encerramento = false;
 		 obj_rede.alarm[0] = -1;
 
 	    audio_stop_sound(snd_musica);
-
-	    global.ponto_jogador1 = 0;
-	    global.ponto_jogador2 = 0;
-
+		
 	    rede_encerrar();
-	    room_goto(rm_menu);
+		
+	    room_goto(rm_game_over);
 	}
 }
