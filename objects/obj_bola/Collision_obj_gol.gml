@@ -1,3 +1,8 @@
+if (obj_rede.modo_jogo == "host" && obj_rede.cliente_id >= 0)
+{
+    rede_enviar(obj_rede.cliente_id, "SOM_PONTO");
+}
+
 audio_play_sound(snd_ponto, 1, false, 2);
 
 x = xstart;

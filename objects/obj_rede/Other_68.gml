@@ -7,9 +7,6 @@ if (_tipo == 2 && modo_jogo == "host")
 
     audio_stop_sound(snd_musica);
 
-    global.ponto_jogador1 = 0;
-    global.ponto_jogador2 = 0;
-
     pontos_enviados_jogador1 = -1;
     pontos_enviados_jogador2 = -1;
 
@@ -17,6 +14,8 @@ if (_tipo == 2 && modo_jogo == "host")
 
     aviso_desconexao = true;
     alarm[1] = 180;
+	global.ponto_jogador1 = 0;
+    global.ponto_jogador2 = 0;
 }
 
 if (_tipo == 3)
@@ -142,4 +141,12 @@ if (_tipo == 3)
 
         room_goto(rm_partida);
     }
+	
+	if (_mensagem == "SOM_BOLA" && modo_jogo == "cliente")
+	{
+		audio_pause_sound(snd_bola);
+		audio_play_sound(snd_bola, 1, false, 0.5);
+	}
+
+	if (_mensagem == "SOM_PONTO" && modo_jogo == "cliente") audio_play_sound(snd_ponto, 1, false, 2);
 }

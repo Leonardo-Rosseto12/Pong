@@ -1,3 +1,8 @@
+if (obj_rede.modo_jogo == "host" && obj_rede.cliente_id >= 0)
+{
+    rede_enviar(obj_rede.cliente_id, "SOM_BOLA");
+}
+
 audio_play_sound(snd_bola, 1, false);
 
 randomise();

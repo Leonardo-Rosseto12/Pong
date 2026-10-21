@@ -1,1 +1,0 @@
-show_debug_message("ENTROU NA ROOM DE ESPERA");
