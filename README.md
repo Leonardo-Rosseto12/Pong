@@ -43,7 +43,7 @@ Projeto desenvolvido em GameMaker utilizando GML, com modos de jogo individual, 
 
 ### Pong para Windows
 
-<a href="LINK_DO_INSTALADOR">
+<a href="https://github.com/Leonardo-Rosseto12/Pong/releases/tag/v1.0.0">
   <img src="https://img.shields.io/badge/BAIXAR_INSTALADOR-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar instalador">
 </a>
 
