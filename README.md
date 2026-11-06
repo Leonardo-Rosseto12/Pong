@@ -41,6 +41,11 @@ Projeto desenvolvido em GameMaker utilizando GML, com modos de jogo individual, 
 
 <div align="center">
 
+<br>
+<a href="https://leonardorosseto.itch.io/pong">
+<img src="https://img.shields.io/badge/Jogar_no_itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white">
+</a>
+
 ### Pong para Windows
 
 <a href="https://github.com/Leonardo-Rosseto12/Pong/releases/tag/v1.0.0">
